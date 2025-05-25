@@ -87,3 +87,5 @@ npx cucumber-js -c cucumber.json
 - Implement a centralized locator management system for easier maintenance and updates (e.g., use locator files or constants in `src/pageObjects/locators/`).
 - Expand and validate cross-browser support (ensure tests run reliably on Chromium, Firefox, and WebKit).
 - Create a reusable GitHub Actions workflow for Playwright+Cucumber projects to enable easy CI setup across repositories.
+- Add more positive and negative test scenarios to increase coverage and robustness.
+- Make tests configurable by allowing arguments (such as environment, browser, or baseURL) to be passed from the CLI and used in the test run.
