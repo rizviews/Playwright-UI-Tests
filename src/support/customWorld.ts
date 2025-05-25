@@ -8,6 +8,7 @@ export class CustomWorld extends World {
   browser!: Browser;
   context!: BrowserContext;
   landingPage!: LandingPage;
+  accountsOverviewPage!: any;
 
   constructor(options: IWorldOptions) {
     super(options);

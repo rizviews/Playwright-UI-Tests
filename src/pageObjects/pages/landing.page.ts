@@ -46,4 +46,11 @@ export class LandingPage extends BasePage {
     await expect(error).toBeVisible();
     await expect(error).toHaveText('Please enter a username and password.');
   }
+
+  async loginWithValidCredentials() {
+    // Replace with your actual test credentials
+    await this.page.locator('[name="username"]').fill('rizwan582@gmail.com');
+    await this.page.locator('[name="password"]').fill('Abc1234');
+    await this.page.getByRole('button', { name: 'Log In' }).click();
+  }
 }

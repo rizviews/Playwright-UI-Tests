@@ -30,6 +30,23 @@ This project demonstrates UI automation for the Parabank demo site using Playwri
 └── test-results/                # Test and report output
 ```
 
+## Test Overview
+
+This project includes the following automated test cases:
+
+- **Landing Page**
+  - Verifies the landing page loads successfully
+  - Checks for the presence of the "Customer Login" section
+  - Checks for the "Register" link
+  - Checks for the "Online Services" item header
+  - Validates error message when logging in with empty credentials
+
+- **Accounts Overview**
+  - Logs in as a valid user
+  - Navigates to the Accounts Overview page
+  - Verifies the accounts overview table is visible
+  - Verifies at least one account is listed
+
 ## Getting Started
 
 ### 1. Install dependencies
@@ -72,7 +89,20 @@ npx cucumber-js -c cucumber.json
 ## Useful Scripts
 
 - `npm test` — Run all Cucumber tests
-- `npx playwright test` — Run Playwright tests (if you have any in Playwright's native format)
+
+## Example: Run a Single Feature File
+
+To run only the Accounts Overview feature:
+
+```sh
+npx cucumber-js tests/features/accounts-overview.feature -c cucumber.json
+```
+
+To run a single feature file with a tag (e.g., @smoke):
+
+```sh
+npx cucumber-js tests/features/accounts-overview.feature --tags @smoke -c cucumber.json
+```
 
 ## Notes
 
