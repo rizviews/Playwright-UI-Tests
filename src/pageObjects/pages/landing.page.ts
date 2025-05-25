@@ -34,4 +34,16 @@ export class LandingPage extends BasePage {
     await registerLink.waitFor({ state: 'visible' });
     expect(registerLink).toBeVisible();
   }
+
+  async clickButton(buttonText: string) {
+    const button = this.page.getByRole('button', { name: buttonText });
+    await button.click();
+  }
+
+  async verifyLoginErrorMessage() {
+    const error = this.page.locator('.error');
+    await error.waitFor({ state: 'visible', timeout: 5000 });
+    await expect(error).toBeVisible();
+    await expect(error).toHaveText('Please enter a username and password.');
+  }
 }
